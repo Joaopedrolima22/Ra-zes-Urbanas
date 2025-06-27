@@ -1,12 +1,69 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Meu Site com Imagem</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Raízes Urbanas</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="imagem/favicon-removebg-preview.png" type="image/webp" />
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
 </head>
 <body>
-    <h1>Bem-vindo ao meu site!</h1>
-    <img src="imagem.jpg" alt="Descrição da imagem" class="minha-imagem">
+  <header>
+    <h1>Mistura o rural e o urbano, mostrando a interdependência.</h1>
+  </header>
+
+  <section class="intro">
+    <div class="texto">
+      <h2>Campo e Cidade: Uma Parceria Essencial</h2>
+      <p>
+        O campo e a cidade são partes complementares da nossa sociedade. O campo oferece alimentos, energia e matéria-prima, enquanto a cidade traz inovação, serviços e infraestrutura. Essa troca fortalece a economia, a cultura e a sustentabilidade.
+      </p>
+      <button class="saiba-mais-btn" id="btnSaibaMais">Saiba mais</button>
+    </div>
+    <img src="imagem/campo-cidade.jpg" alt="Conexão Campo e Cidade" />
+  </section>
+
+  <section class="interativo">
+    <h2>Interação Visual</h2>
+    <p>Veja como o campo e a cidade se conectam com essa simulação animada:</p>
+    <div id="canvas-container"></div>
+  </section>
+
+  <!-- Modal -->
+  <div id="modalSaibaMais" class="modal">
+    <div class="modal-content">
+      <span class="fechar" id="fecharModal">&times;</span>
+      <h3>Mais Sobre Raízes Urbanas</h3>
+      <p>
+        O projeto "Raízes Urbanas" busca mostrar a relação simbiótica entre o rural e o urbano, destacando como ambos se complementam e dependem um do outro para o desenvolvimento sustentável. Através de conteúdos visuais, textos e animações interativas, o site traz uma experiência educativa e envolvente sobre esse tema tão importante.
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    Feito por João Pedro. Todos os direitos reservados.
+  </footer>
+
+  <script src="sketch.js"></script>
+  <script>
+    // Código para controle do modal
+    const btnSaibaMais = document.getElementById('btnSaibaMais');
+    const modal = document.getElementById('modalSaibaMais');
+    const fechar = document.getElementById('fecharModal');
+
+    btnSaibaMais.addEventListener('click', () => {
+      modal.style.display = 'block';
+    });
+
+    fechar.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>

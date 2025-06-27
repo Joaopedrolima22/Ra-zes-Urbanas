@@ -1,18 +1,165 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Corpo */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 20px;
+  background: linear-gradient(to bottom, #d9f0f0, #f7fafb);
+  color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-h1 {
-    color: #333;
+/* Header */
+header {
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
 }
 
-.minha-imagem {
+/* Seção introdutória */
+.intro {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 1rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background: #f1f8f9ee;
+  border-radius: 15px;
+  margin: 1rem;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+.intro .texto {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.intro img {
+  flex: 1 1 300px;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* Botão Saiba Mais */
+.saiba-mais-btn {
+  background-color: #26547c;
+  color: white;
+  padding: 10px 18px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.saiba-mais-btn:hover {
+  background-color: #1e3c72;
+}
+
+/* Seção interativa */
+.interativo {
+  background: #e0f7fa;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-top: 5px solid #0288d1; /* listra azul mais distinta */
+  margin: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
+}
+
+.interativo h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.interativo button {
+  background-color: #26547c;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.interativo button:hover {
+  background-color: #1e3c72;
+}
+
+/* Footer */
+footer {
+  background-color: #193441;
+  color: #b0bec5;
+  padding: 1rem;
+  text-align: center;
+  margin-top: auto;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  font-style: italic;
+}
+
+/* Modal estilo */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  color: #2c3e50;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.fechar {
+  color: #555;
+  font-size: 28px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.fechar:hover {
+  color: #0288d1;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .intro {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .intro img {
     max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-top: 20px;
+  }
 }
